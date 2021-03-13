@@ -1,4 +1,3 @@
-
 class CountdownTimer {
   constructor({ selector, targetDate }) {
     this.selector = selector;
@@ -29,9 +28,15 @@ class CountdownTimer {
   pad(value) {
     return String(value).padStart(2, '0');
   }
+
+  // getRender ()  {
+    
+  // }
+
   updateTimer({ days, hours, mins, secs }) {
     const timer = document.querySelector(this.selector);
     const refs = {
+      // timer: document.querySelector('.timer'),
       days: timer.querySelector('[data-value="days"]'),
       hours: timer.querySelector('[data-value="hours"]'),
       mins: timer.querySelector('[data-value="mins"]'),
@@ -42,9 +47,18 @@ class CountdownTimer {
     refs.mins.textContent = mins;
     refs.secs.textContent = secs;
     
+  // days.insertAdjacentText('beforeend', days);
+  // hours.insertAdjacentText('beforeend', hours);
+  // mins.insertAdjacentText('beforeend', mins);
+  // secs.insertAdjacentText('beforeend', secs);
   }
 }
+
 const timer = new CountdownTimer({
   selector: '#timer-1',
   targetDate: new Date('Mar 9, 2022'),
+});
+const timer_2 = new CountdownTimer({
+  selector: '#timer-2',
+  targetDate: new Date('Sep 10, 2021'),
 });
